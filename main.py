@@ -22,7 +22,7 @@ morse_code = {
     '!': '-.-.--', '/': '-..-.',  '(': '-.--.',  ')': '-.--.-',
     '&': '.-...',  ':': '---...', ';': '-.-.-.',
     '=': '-...-',  '+': '.-.-.',  '-': '-....-', '_': '..--.-',
-    '"': '.-..-.', '$': '...-..-', '@': '.--.-.'
+    '"': '.-..-.', '$': '...-..-', '@': '.--.-.', ' ':'\\'
 }
 
 
@@ -32,7 +32,7 @@ morse_code = {
 def converte():
     a = ent.get()
     global morse_code
-    result = ' '.join([morse_code[x] for x in a.upper() if x != ' '])
+    result = ' '.join([morse_code[x] for x in a.upper()])
     lab['text'] = result
     
 def clear():
@@ -52,20 +52,6 @@ btn1.grid(column=1, row=1)
 
 lab = Label(font=('Arial', 20), width=28, text='', anchor='w')
 lab.grid(column=0, row=1, padx=10, pady=10)
-
-
-
-    
-        
-        
-        
-
-
-
-
-
-
-
 
 
 
