@@ -3,6 +3,8 @@ from tkinter import *
 root = Tk()
 root.geometry('550x150+800+100')
 root.configure(bg='Black')
+root.resizable(False, False)
+root.title('Text to morze')
 
 # Code morze
 morse_code = {
