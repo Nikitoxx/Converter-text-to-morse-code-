@@ -19,10 +19,10 @@ def clear():
     ent.delete(0, END)
     lab['text'] = ''
     
-def create_button( text, command, column, row):
-    Button(font=('Arial', 15), 
+def create_button( text, command, column, row, font,bg):
+    Button(font=font, 
            text= text, 
-           bg='orange', 
+           bg=bg, 
            command=command).grid(column=column,
                                  row=row)
     
@@ -33,13 +33,21 @@ def create_button( text, command, column, row):
 ent = Entry(font=('Arial', 20), width=30)
 ent.grid(column=0, row=0, padx=10, pady=10)
 
+buttons = [['Enter', converte, 1, 0, ('Arial', 15), 'orange'],
+           ['Clear', clear, 1, 1, ('Arial', 15), 'orange']]
 
-create_button('Enter', converte, 1, 0)
-create_button('Clear', clear, column=1, row=1)
+for i in buttons:
+    x, c, v, b, n, m = i
+    create_button(x, c, v, b, n, m)
+
+
+
 
 
 lab = Label(font=('Arial', 20), width=28, text='', anchor='w')
 lab.grid(column=0, row=1, padx=10, pady=10)
+
+
 
 
 
