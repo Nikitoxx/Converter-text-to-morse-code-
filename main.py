@@ -34,7 +34,8 @@ ent = Entry(font=('Arial', 20), width=30)
 ent.grid(column=0, row=0, padx=10, pady=10)
 
 buttons = [['Enter', converte, 1, 0, ('Arial', 15), 'orange'],
-           ['Clear', clear, 1, 1, ('Arial', 15), 'orange']]
+           ['Clear', clear, 1, 1, ('Arial', 15), 'orange'],
+           ['Atbash', None, 0, 2, ('Arial', 10), 'gray']]
 
 for i in buttons:
     x, c, v, b, n, m = i
