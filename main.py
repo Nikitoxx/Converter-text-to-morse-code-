@@ -5,19 +5,19 @@ root = Tk()
 root.geometry('550x150+800+100')
 root.configure(bg='Black')
 root.resizable(False, False)
-root.title('Text to morze')
+root.title('Text encryptor')
 
 
 #Functions 
-atbsh = True
+atbsh = False
 
 
 def converte():
     a = ent.get()
     if atbsh:
-        result = ' '.join(morse[x] for x in a.upper())
-    else:
         result = ''.join(atbash[x] if x.isalpha() else x for x in a)
+    else:
+        result = ' '.join(morse[x] for x in a.upper())
     lab['text'] = result
 
         
@@ -37,8 +37,10 @@ def create_button( text, command, column, row, font,bg):
 def swith_to():
     global atbsh
     if atbsh:
+        btn['text'] = 'Encryption Type: Morse'
         atbsh = False
     else:
+        btn['text'] = 'Encryption Type: Atbash'
         atbsh = True
     
 
@@ -49,12 +51,17 @@ ent = Entry(font=('Arial', 20), width=30)
 ent.grid(column=0, row=0, padx=10, pady=10)
 
 buttons = [['Enter', converte, 1, 0, ('Arial', 15), 'orange'],
-           ['Clear', clear, 1, 1, ('Arial', 15), 'orange'],
-           ['Encryption Type', swith_to, 0, 2, ('Arial', 10), 'gray']]
+           ['Clear', clear, 1, 1, ('Arial', 15), 'orange'],]
 
 for i in buttons:
     x, c, v, b, n, m = i
     create_button(x, c, v, b, n, m)
+    
+btn = Button(font=('Arial', 10), 
+           text='Encryption Type: Morse', 
+           bg='grey', 
+           command=swith_to)
+btn.grid(column=0, row=2)
 
 
 
